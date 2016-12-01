@@ -1,10 +1,10 @@
 
 function roll(){
-	var dice1=Math.floor(Math.random()*6) +1; $("#dice1").empty(); $('#dice1').append(dice1);
-	var dice2=Math.floor(Math.random()*6) +1; $("#dice2").empty(); $('#dice2').append(dice2);
-	var dice3=Math.floor(Math.random()*6) +1; $("#dice3").empty(); $('#dice3').append(dice3);
-	var dice4=Math.floor(Math.random()*6) +1; $("#dice4").empty(); $('#dice4').append(dice4);
-	var dice5=Math.floor(Math.random()*6) +1; $("#dice5").empty(); $('#dice5').append(dice5);
+	var dice1=Math.floor(Math.random()*6) +1; $(".die-1").empty(); $('.die-1').append(dice1);
+	var dice2=Math.floor(Math.random()*6) +1; $(".die-2").empty(); $('.die-2').append(dice2);
+	var dice3=Math.floor(Math.random()*6) +1; $(".die-3").empty(); $('.die-3').append(dice3);
+	var dice4=Math.floor(Math.random()*6) +1; $(".die-4").empty(); $('.die-4').append(dice4);
+	var dice5=Math.floor(Math.random()*6) +1; $(".die-5").empty(); $('.die-5').append(dice5);
 
 	var total=dice1+dice2+dice3+dice4+dice5;
 
