@@ -35,8 +35,13 @@ function clicks(){
 	}
 
 	else{alert("ny spelares tur!");
-	$("span").empty();
-	$(".btn").empty();
-	$(".btn").push('&nbsp &nbsp');}	// (johan says) här ska ny spelare starta..
+	// roll-räknaren och tärningarna töms, ersätts med space ('&nbsp;')
+	// för att tärningsrutorna ska behålla sin storlek och inte krympa
+		$("span").empty();
+		$(".btn").empty();
+		$(".btn").append('&nbsp;', '&nbsp;');
+		// countern nollställs för ny tur
+		count = 0;
+	}	
 
 }
