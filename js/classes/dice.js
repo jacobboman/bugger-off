@@ -1,26 +1,42 @@
 
 function roll(){
-	var dice1=Math.floor(Math.random()*6) +1; $(".die-1").empty(); $('.die-1').append(dice1);
-	var dice2=Math.floor(Math.random()*6) +1; $(".die-2").empty(); $('.die-2').append(dice2);
-	var dice3=Math.floor(Math.random()*6) +1; $(".die-3").empty(); $('.die-3').append(dice3);
-	var dice4=Math.floor(Math.random()*6) +1; $(".die-4").empty(); $('.die-4').append(dice4);
-	var dice5=Math.floor(Math.random()*6) +1; $(".die-5").empty(); $('.die-5').append(dice5);
+	var dice1=Math.floor(Math.random()*6) +1; 
+	$(".die-1").html(dice1);
+
+	var dice2=Math.floor(Math.random()*6) +1; 
+	$('.die-2').html(dice2);
+
+	var dice3=Math.floor(Math.random()*6) +1; 
+	$('.die-3').html(dice3);
+
+	var dice4=Math.floor(Math.random()*6) +1; 
+	$('.die-4').html(dice4);
+
+	var dice5=Math.floor(Math.random()*6) +1; 
+	$('.die-5').html(dice5);
 
 	var total=dice1+dice2+dice3+dice4+dice5;
 
 	var listItem = total;
 	$("#total").empty();
 	$('#total').append(listItem);
-
 }
 
 var count = 0;
 
-function clicks(){		// countern ska uppdateras (ska sluta vid 3 kilck)! lägger till den så länge!!
-    count++;
-	console.log(count);
-	var listItem = 3-count;
-	$("span").empty();
-	$('#counter').html(listItem);
-}
+function clicks(){
 
+	if (count < 3){
+		count++;
+		console.log(count);
+		$("span").empty();
+		$('.counter').html(3-count);
+		roll();
+	}
+
+	else{alert("ny spelares tur!");
+	$("span").empty();
+	$(".btn").empty();
+	$(".btn").push('&nbsp &nbsp');}	// (johan says) här ska ny spelare starta..
+
+}
