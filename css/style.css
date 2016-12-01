@@ -9,7 +9,7 @@
 
 .board {
 	background-color: lightgrey;
-	padding: 0 125px 500px 125px;
+	padding-bottom: 500px;
 }
 
 .players, .sum, .bonus, .total {
@@ -18,12 +18,19 @@
 }
 
 .die-button {
-	margin-left: 5px;
+	margin: 5px;
+}
+
+.dice {
+	padding: 0;
+}
+
+.die-1 {
+	margin-left: 0px;
 }
 
 h4 {
 	text-align: center;
-	display: inline-block;
 }
 
 
