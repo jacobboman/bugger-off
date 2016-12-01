@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Yatzy</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <title>Yatzy</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- all JS -->
     <script type="text/javascript" src="js/libs/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="js/libs/bootstrap.min.js"></script>
+    <script src="js/classes/dice.js"></script>
     <script src="js/main.js"></script>
-
     <!-- all CSS -->
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -21,17 +21,18 @@
    <div class="row">
         <div class="col-md-6 col-sm-12 board">
           <h4>Spelare 1</h4>
-          <br />
-          <button type="button" class="btn btn-default btn-lg die-button die-1">
-          &nbsp &nbsp</button>
-          <button type="button" class="btn btn-default btn-lg die-button die-2">
-          &nbsp &nbsp</button> 
-          <button type="button" class="btn btn-default btn-lg die-button die-3">
-          &nbsp &nbsp</button> 
-          <button type="button" class="btn btn-default btn-lg die-button die-4">
-          &nbsp &nbsp</button> 
-          <button type="button" class="btn btn-default btn-lg die-button die-">
-          &nbsp &nbsp</button> 
+          <div class="col-md-7 col-md-offset-3 col-sm-7 col-sm-offset-3 dice">
+            <button type="button" class="btn btn-default btn-lg die-button die-1">
+            &nbsp &nbsp</button>
+            <button type="button" class="btn btn-default btn-lg die-button die-2">
+            &nbsp &nbsp</button> 
+            <button type="button" class="btn btn-default btn-lg die-button die-3">
+            &nbsp &nbsp</button> 
+            <button type="button" class="btn btn-default btn-lg die-button die-4">
+            &nbsp &nbsp</button> 
+            <button type="button" class="btn btn-default btn-lg die-button die-">
+            &nbsp &nbsp</button>
+          </div>
           <!-- <div id="die1" class="dice">0</div>
           <div id="die2" class="dice">0</div>
           <div id="die3" class="dice">0</div>
@@ -39,6 +40,12 @@
           <div id="die5" class="dice">0</div>
           <button onclick="rollDice()">Roll Dice</button>
           <h2 id="status" style="clear:left;"></h2>    -->
+            <br>
+            <div><button type="button" id="btn" onclick="clicks(), roll()">roll dice</button></div>
+            <br>
+            <h4>total points: <span id="total"> </span></h4>
+            <br>
+            <h4>you have made <span id="counter"> </span> rolls.</h4>
         </div>
         <div class="col-md-6 col-sm-12">
             <table class="table table-bordered">
