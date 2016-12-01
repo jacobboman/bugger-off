@@ -22,3 +22,13 @@ function rollDice(){
         status.innerHTML += " DOUBLES! You get a free turn!!";
     }
 }
+
+var count =0;
+function onclick(){
+    while(count<4){
+        count ++;
+
+    }
+var text =count;
+$('#number').append(text);
+}
