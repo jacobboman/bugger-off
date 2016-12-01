@@ -1,7 +1,28 @@
-p {
-	font-family: cursive;
+.container {
+	margin-top: 10px;
 }
-div.dice{
+
+.board {
+	background-color: lightgrey;
+	padding: 0 125px 500px 125px;
+}
+
+.players, .sum, .bonus, .total {
+	background-color: lightgrey;
+	font-weight: bold;
+}
+
+.die-button {
+	margin-left: 5px;
+}
+
+h4 {
+	text-align: center;
+	display: inline-block;
+}
+
+
+/*div.dice{
     float:left;
     width:32px;
     background:#F5F5F5;
@@ -11,3 +32,4 @@ div.dice{
     text-align:center;
     margin:5px;
 }
+*/
