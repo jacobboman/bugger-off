@@ -7,6 +7,7 @@
     <!-- all JS -->
     <script type="text/javascript" src="js/libs/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="js/libs/bootstrap.min.js"></script>
+      <script src="js/classes/dice.js"></script>
     <script src="js/main.js"></script>
 
     <!-- all CSS -->
@@ -15,7 +16,6 @@
   </head>
   
 <body>
-
 <div class="container">
 
    <div class="row">
@@ -40,6 +40,12 @@
           <div id="die5" class="dice">0</div>
           <button onclick="rollDice()">Roll Dice</button>
           <h2 id="status" style="clear:left;"></h2>    -->
+            <br>
+            <div><button type="button" id="btn" onclick="clicks(), roll()">roll dice</button></div>
+            <br>
+            <h4>total points: <span id="total"> </span></h4>
+            <br>
+            <h4>you have made <span id="counter"> </span> rolls.</h4>
         </div>
         <div class="col-md-6 col-sm-12">
             <table class="table table-bordered">
