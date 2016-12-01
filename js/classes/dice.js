@@ -16,11 +16,20 @@ function roll(){
 
 var count = 0;
 
-function clicks(){		// countern ska uppdateras (ska sluta vid 3 kilck)! lägger till den så länge!!
-    count++;
-	console.log(count);
-	var listItem = count;
-	$("span").empty();
-	$('#counter').append(listItem);
-}
+function clicks(){
 
+	if (count < 3){
+		count++;
+		console.log(count);
+		var listItem = count;
+		$("span").empty();
+		$('#counter').append(listItem);
+		roll();
+	}
+
+	else{alert("ny spelares tur!");
+	$("span").empty();
+	$(".btn").empty();
+	$(".btn").push('&nbsp &nbsp');}	// (johan says) här ska ny spelare starta..
+
+}
