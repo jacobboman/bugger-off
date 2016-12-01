@@ -16,10 +16,14 @@
 	margin: 5px;
 }
 
-.dice {
+.dice, .throw-button{
 	padding: 0;
 }
 
+.throw-button{
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
 .die-1 {
 	margin-left: 0px;
 }

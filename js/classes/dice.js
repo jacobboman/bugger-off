@@ -19,8 +19,8 @@ var count = 0;
 function clicks(){		// countern ska uppdateras (ska sluta vid 3 kilck)! lägger till den så länge!!
     count++;
 	console.log(count);
-	var listItem = count;
+	var listItem = 3-count;
 	$("span").empty();
-	$('#counter').append(listItem);
+	$('#counter').html(listItem);
 }
 
