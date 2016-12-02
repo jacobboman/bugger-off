@@ -29,7 +29,6 @@ function clicks(){
 	if (count < 3){
 		count++;
 		console.log(count);
-		$("span").empty();
 		$('.counter').html(3-count);
 		roll();
 	}

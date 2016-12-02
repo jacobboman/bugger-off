@@ -31,3 +31,4 @@ Player.prototype.showProtocol = function() {
 	$('.yatzy').append('<td>' + this.yatzy + '</td>');
 	$('.total').append('<td>' + this.total + '</td>');
 }
+
