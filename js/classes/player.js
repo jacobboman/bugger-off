@@ -35,3 +35,4 @@ Player.prototype.showProtocol = function() {
 
 	allPlayers.push(player);
 }
+
