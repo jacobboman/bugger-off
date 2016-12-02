@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-$("button").click(function(){
+$(".die-button").click(function(){
     $(this).toggleClass("locked");
 });
 });
