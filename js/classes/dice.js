@@ -1,18 +1,18 @@
 
 function roll(){
-	var dice1=Math.floor(Math.random()*6) +1; 
+	var dice1=Math.floor(Math.random()*6) +1;
 	$(".die-1").html(dice1);
 
-	var dice2=Math.floor(Math.random()*6) +1; 
+	var dice2=Math.floor(Math.random()*6) +1;
 	$('.die-2').html(dice2);
 
-	var dice3=Math.floor(Math.random()*6) +1; 
+	var dice3=Math.floor(Math.random()*6) +1;
 	$('.die-3').html(dice3);
 
-	var dice4=Math.floor(Math.random()*6) +1; 
+	var dice4=Math.floor(Math.random()*6) +1;
 	$('.die-4').html(dice4);
 
-	var dice5=Math.floor(Math.random()*6) +1; 
+	var dice5=Math.floor(Math.random()*6) +1;
 	$('.die-5').html(dice5);
 
 	var total=dice1+dice2+dice3+dice4+dice5;
@@ -38,10 +38,9 @@ function clicks(){
 	// roll-räknaren och tärningarna töms, ersätts med space ('&nbsp;')
 	// för att tärningsrutorna ska behålla sin storlek och inte krympa
 		$("span").empty();
-		$(".btn").empty();
 		$(".btn").append('&nbsp;', '&nbsp;');
 		// countern nollställs för ny tur
 		count = 0;
-	}	
+	}
 
 }
