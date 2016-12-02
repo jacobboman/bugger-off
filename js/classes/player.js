@@ -5,6 +5,8 @@ function Player(props){
     console.log(this[i]);
 	}
 }
+// lista där alla spelare sparas
+var allPlayers = []; 
 
 //definitivt protokoll där de definitiva värdena ska pushas in (x byts ut)
 var player = new Player({name:" ", ones:"x", twos:"x", threes:"x", fours:"x", fives:"x", sixes:"x", sum:"x", bonus:"x", onePair:"x", twoPairs:"x", threeOfAKind:"x", fourOfAKind:"x", smallStraight:"x", largeStraight:"x", fullHouse:"x", chance:"x", yatzy:"x", total:"x"});
@@ -30,4 +32,6 @@ Player.prototype.showProtocol = function() {
 	$('.chance').append('<td>' + this.chance + '</td>');
 	$('.yatzy').append('<td>' + this.yatzy + '</td>');
 	$('.total').append('<td>' + this.total + '</td>');
+
+	allPlayers.push(player);
 }
