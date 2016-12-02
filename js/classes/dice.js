@@ -1,34 +1,34 @@
 
 function roll(){
 	
-	if($('#0').hasClass('locked')){
+	if($('.die-1').hasClass('locked')){
 
 	} else {
 		var dice1=Math.floor(Math.random()*6) +1;
 		$(".die-1").html(dice1);
 	}
-	if($('#1').hasClass('locked')){
+	if($('.die-2').hasClass('locked')){
 
 	} else {
 
 	var dice2=Math.floor(Math.random()*6) +1;
 	$('.die-2').html(dice2);
 	}
-	if($('#2').hasClass('locked')){
+	if($('.die-3').hasClass('locked')){
 
 	} else {
 
 	var dice3=Math.floor(Math.random()*6) +1;
 	$('.die-3').html(dice3);
 	}
-	if($('#3').hasClass('locked')){
+	if($('.die-4').hasClass('locked')){
 
 	} else {
 
 	var dice4=Math.floor(Math.random()*6) +1;
 	$('.die-4').html(dice4);
 	}
-	if($('#4').hasClass('locked')){
+	if($('.die-5').hasClass('locked')){
 
 	} else {
 
@@ -67,6 +67,7 @@ function clicks(){
 		// countern nollställs för ny tur
 		count = 0;
 		$('.counter').html(3-count);
+		$(".die-button").removeClass('locked');
 	}
 
 }
