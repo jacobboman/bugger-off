@@ -1,27 +1,32 @@
-
-
 function theStart() {
-  var pop = $(
-	'<body>' +
-	'<div class="btn-group" data-toggle="buttons">' +
-	'<label class="btn btn-primary active">' +
-    '<input type="checkbox" autocomplete="off" checked> 1 Spelare' +
-	'</label>' +
-	'<label class="btn btn-primary">' +
-    '<input type="checkbox" autocomplete="off"> 2 Spelare' +
-	'</label>' +
-	'<label class="btn btn-primary">' +
-    '<input type="checkbox" autocomplete="off"> 3 Spelare' +
-	'</label>' +
-	'<label class="btn btn-primary">' +
-    '<input type="checkbox" autocomplete="off"> 4 Spelare' +
-	'</label>' +
-	'<label class="btn btn-primary">' +
-    '<input type="checkbox" autocomplete="off"> 5 Spelare' +
-	'</label>' +
-	'</div>'); +
-	'</body>' +
+		// create a popup with all the 'choose amount of players'-buttons
+		$('body').append(
+			'<div class="popup-bg">' +
+				'<div class="dom-popup">' + 
+					'<div class="col-sm-10 col-sm-offset-1 players-buttons">' + 
+						'<div class="btn-group" data-toggle="buttons">' +
+							'<label class="btn btn-primary btn-lg">' +
+						    '<input type="checkbox" autocomplete="off"> 1 Spelare' +
+							'</label>' +
+							'<label class="btn btn-primary btn-lg">' +
+						    '<input type="checkbox" autocomplete="off"> 2 Spelare' +
+							'</label>' +
+							'<label class="btn btn-primary btn-lg 3-players">' +
+						    '<input type="checkbox" autocomplete="off"> 3 Spelare' +
+							'</label>' +
+							'<label class="btn btn-primary btn-lg">' +
+						    '<input type="checkbox" autocomplete="off"> 4 Spelare' +
+							'</label>' +
+							'<label class="btn btn-primary btn-lg">' +
+						    '<input type="checkbox" autocomplete="off"> 5 Spelare' +
+							'</label>' +
+						'</div>' +
+					'</div>' +
+				'</div>' +
+			'</div>');
 
-  //$('body').remove();
-  $('html').append(pop);
-}
+		// remove the popup
+		$('.btn-primary').on('click', function() {
+			$('.popup-bg').remove();
+	});
+};
