@@ -7,18 +7,21 @@
     <!-- all JS -->
     <script type="text/javascript" src="js/libs/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="js/libs/bootstrap.min.js"></script>
+
     <script src="js/classes/Dice.js"></script>
+    <script src="js/classes/save.js"></script>
     <script src="js/classes/Player.js"></script>
+
     <script src="js/main.js"></script>
     <!-- all CSS -->
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
   </head>
   
-<body onload="Player()">
-
-<div class="container">
-   <div class="row">
+  <!-- <body onload="theStart()"> -->
+  <body>
+    <div class="container">
+      <div class="row">
         <div class="col-md-6 col-sm-12 board">
           <h4>Spelare 1</h4>
           <!-- Skapar tärningar -->
@@ -42,7 +45,7 @@
             <!-- Visar antal poäng och kast -->
             <div class="col-sm-12">
                 <h4>Totala poäng: <span id="total"> </span></h4>
-                <h4 class="counter">3</h4><h4> kast kvar</h4>
+                <h4>Kast kvar: </h4><h4 class="counter">3</h4>
             </div>
 
 
