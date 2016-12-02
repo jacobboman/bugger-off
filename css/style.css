@@ -17,7 +17,7 @@
 
 .board {
 	background-color: lightgrey;
-	padding: 0 125px 500px 125px;
+	padding-bottom: 500px;
 }
 
 .players, .sum, .bonus, .total {
@@ -26,27 +26,80 @@
 }
 
 .die-button {
-	margin-left: 5px;
+	margin: 5px;
+	width: 48px;
+	height: 48px;
+}
+
+.dice, .throw-button{
+	padding: 0;
+}
+
+.throw-button{
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+.die-1 {
+	margin-left: 0px;
 }
 
 h4 {
 	text-align: center;
-	display: inline-block;
 }
 
-.locked {
-border: 1px solid black;    
+/* below is everything styling and positioning the popup and its elements */
+.dom-popup {
+	position: absolute;
+	z-index: 4;
+	border: 2px solid black;
+	width: 750px;
+	height: 400px; 
+	left: 40%;
+	top: 50%;
+	margin-top: -150px;
+	margin-left: -150px;
+	padding: 5px;
+	background-color: rgba(255,255,255,0.65);
+	border-radius: 16px;
+	-webkit-box-shadow: 3px 10px 44px 3px rgba(0,0,0,0.46);
+	-moz-box-shadow: 3px 10px 44px 3px rgba(0,0,0,0.46);
+	box-shadow: 3px 10px 44px 3px rgba(0,0,0,0.46);
 }
 
-
-/*div.dice{
-    float:left;
-    width:32px;
-    background:#F5F5F5;
-    border:#999 1px solid;
-    padding:10px;
-    font-size:24px;
-    text-align:center;
-    margin:5px;
+h2 {
+	text-align: center;
+	padding-top: 30px;
 }
-*/
+
+.popup-bg {
+	background-image: url('/bugger-off/img/bg.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: bottom;
+	z-index: 3;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+}
+
+.close-here {
+	position: absolute;
+	top: 1.5px;
+	right: 1.5px;
+	font-size: 15px;
+	padding: 8px;
+	border: 1px solid black;
+	border-top: 0;
+	border-right: 0;
+	border-radius: 10px;
+	cursor: pointer;
+	-webkit-box-shadow: inset 3px -2px 5px 1px rgba(0,0,0,0.75);
+	-moz-box-shadow: inset 3px -2px 5px 1px rgba(0,0,0,0.75);
+	box-shadow: inset 3px -2px 5px 1px rgba(0,0,0,0.75);
+}
+
+.players-buttons {
+	margin-top: 30px;
+}

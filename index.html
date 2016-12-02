@@ -9,32 +9,29 @@
     <script type="text/javascript" src="js/libs/bootstrap.min.js"></script>
     <script src="js/classes/dice.js"></script>
     <script src="js/classes/player.js"></script>
-    <script src="js/classes/spara.js"></script>
-
     <script src="js/main.js"></script>
     <!-- all CSS -->
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
   </head>
   
-<body class="starter" onload="theStart()">
-    <!-- <div class="starter" onload="theStart()"></div>  johans starter -->
-
-<div class="container">
-   <div class="row">
+  <!-- <body onload="theStart()"> -->
+  <body>
+    <div class="container">
+      <div class="row">
         <div class="col-md-6 col-sm-12 board">
           <h4>Spelare 1</h4>
           <!-- Skapar tärningar -->
           <div class="col-md-7 col-md-offset-3 col-sm-7 col-sm-offset-3 dice">
-            <button type="button" id ="0" class="btn btn-default btn-lg die-button die-1">
-            &nbsp &nbsp </button>
-            <button type="button"  id= "1" class="btn btn-default btn-lg die-button die-2">
+            <button type="button" class="btn btn-default btn-lg die-button die-1">
+            &nbsp &nbsp</button>
+            <button type="button" class="btn btn-default btn-lg die-button die-2">
             &nbsp &nbsp</button> 
-            <button type="button" id= "2" class="btn btn-default btn-lg die-button die-3">
+            <button type="button" class="btn btn-default btn-lg die-button die-3">
             &nbsp &nbsp</button> 
-            <button type="button" id =" 3"class="btn btn-default btn-lg die-button die-4">
+            <button type="button" class="btn btn-default btn-lg die-button die-4">
             &nbsp &nbsp</button> 
-            <button type="button" id= "4" class="btn btn-default btn-lg die-button die-5">
+            <button type="button" class="btn btn-default btn-lg die-button die-5">
             &nbsp &nbsp</button>
           </div>
 
@@ -45,7 +42,7 @@
             <!-- Visar antal poäng och kast -->
             <div class="col-sm-12">
                 <h4>Totala poäng: <span id="total"> </span></h4>
-                <h4 class="counter">3</h4><h4> kast kvar</h4>
+                <h4>Kast kvar: </h4><h4 class="counter">3</h4>
             </div>
 
 
