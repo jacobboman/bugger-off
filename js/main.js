@@ -1,4 +1,4 @@
-
+theStart();
 
 function theStart() {
   var pop = $(
