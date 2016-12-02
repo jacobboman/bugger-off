@@ -58,11 +58,9 @@ function clicks(){
 	}
 
 	else {alert("ny spelares tur!");
-		// roll-räknaren och tärningarna töms, ersätts med space ('&nbsp;')
-		// för att tärningsrutorna ska behålla sin storlek och inte krympa
+		// kasträknaren och tärningarna töms
 		$("span").empty();
 		$(".btn").empty();
-		$(".btn").append('&nbsp;', '&nbsp;');
 		// countern nollställs för ny tur
 		count = 0;
 		$('.counter').html(3-count);
