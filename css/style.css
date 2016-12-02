@@ -68,7 +68,7 @@ h2 {
 }
 
 .popup-bg {
-	background-image: url('/bugger-off/img/bg.jpg');
+	background-image: url('../img/bg.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: bottom;
