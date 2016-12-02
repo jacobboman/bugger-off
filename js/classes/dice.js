@@ -42,6 +42,7 @@ function clicks(){
 		$(".btn").append('&nbsp;', '&nbsp;');
 		// countern nollställs för ny tur
 		count = 0;
+		$('.counter').html(3-count);
 	}
 
 }
