@@ -1,20 +1,10 @@
-.starter {
-	z-index: -1000;
-	position: absolute;
-}
-
-#btn1 {
-	margin-left: 23%;
-	margin-top: 6%;
-}
-
 .container {
 	margin-top: 10px;
 }
 
 .board {
 	background-color: lightgrey;
-	padding-bottom: 500px;
+	padding: 0 125px 500px 125px;
 }
 
 .players, .sum, .bonus, .total {
@@ -23,23 +13,16 @@
 }
 
 .die-button {
-	margin: 5px;
-}
-
-.dice, .throw-button{
-	padding: 0;
-}
-
-.throw-button{
-	margin-top: 40px;
-	margin-bottom: 40px;
-}
-.die-1 {
-	margin-left: 0px;
+	margin-left: 5px;
 }
 
 h4 {
 	text-align: center;
+	display: inline-block;
+}
+
+.locked {
+border: 1px solid black;    
 }
 
 
