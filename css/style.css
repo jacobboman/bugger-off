@@ -1,3 +1,7 @@
+.btn:focus, .btn:active:focus, .btn.active:focus {
+	outline: none;
+}
+
 .container {
 	margin-top: 10px;
 }
@@ -16,6 +20,11 @@
 	margin: 5px;
 	width: 48px;
 	height: 48px;
+	border: 2px solid green;
+}
+
+.locked {
+	border: 2px solid red;
 }
 
 .dice, .throw-button{
