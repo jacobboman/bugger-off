@@ -5,19 +5,19 @@ function theStart() {
 				'<div class="dom-popup">' + 
 					'<div class="col-sm-10 col-sm-offset-1 players-buttons">' + 
 						'<div class="btn-group" data-toggle="buttons">' +
-							'<label class="btn btn-primary btn-lg">' +
+							'<label class="btn btn-primary btn-lg" onclick="player.showProtocol()">' +
 						    '<input type="checkbox" autocomplete="off"> 1 Spelare' +
 							'</label>' +
-							'<label class="btn btn-primary btn-lg">' +
+							'<label class="btn btn-primary btn-lg" onclick="player.showProtocol();player.showProtocol()">' +
 						    '<input type="checkbox" autocomplete="off"> 2 Spelare' +
 							'</label>' +
-							'<label class="btn btn-primary btn-lg 3-players">' +
+							'<label class="btn btn-primary btn-lg" onclick="player.showProtocol();player.showProtocol();player.showProtocol()">' +
 						    '<input type="checkbox" autocomplete="off"> 3 Spelare' +
 							'</label>' +
-							'<label class="btn btn-primary btn-lg">' +
+							'<label class="btn btn-primary btn-lg" onclick="player.showProtocol();player.showProtocol();player.showProtocol();player.showProtocol()">' +
 						    '<input type="checkbox" autocomplete="off"> 4 Spelare' +
 							'</label>' +
-							'<label class="btn btn-primary btn-lg">' +
+							'<label class="btn btn-primary btn-lg" onclick="player.showProtocol();player.showProtocol();player.showProtocol();player.showProtocol();player.showProtocol()">' +
 						    '<input type="checkbox" autocomplete="off"> 5 Spelare' +
 							'</label>' +
 						'</div>' +
@@ -29,4 +29,4 @@ function theStart() {
 		$('.btn-primary').on('click', function() {
 			$('.popup-bg').remove();
 	});
-};
+}
