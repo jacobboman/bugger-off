@@ -7,9 +7,11 @@
     <!-- all JS -->
     <script type="text/javascript" src="js/libs/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="js/libs/bootstrap.min.js"></script>
-    <script src="js/classes/dice.js"></script>
+
+    <script src="js/classes/Dice.js"></script>
     <script src="js/classes/save.js"></script>
-    <script src="js/classes/player.js"></script>
+    <script src="js/classes/Player.js"></script>
+
     <script src="js/main.js"></script>
     <!-- all CSS -->
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
@@ -47,7 +49,7 @@
 
 
             <br>  <!-- johan provisorisk knapp för att trigga nya spelare -->
-            <div><button type="button" id="btn1" onclick="Player()">players</button></div> 
+            <div><button type="button" id="btn1" onclick="player.showProtocol()">players</button></div> 
 
         </div>
         <!-- Skapar html-grund för yatzy-protokoll -->
