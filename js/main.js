@@ -1,4 +1,4 @@
-function theStart() {
+$(function theStart() {
 	// create a popup with all the 'choose amount of players'-buttons
 	$('body').append(
 		'<div class="popup-bg">' +
@@ -8,7 +8,7 @@ function theStart() {
 						    '<div class="input-group">'+
 							   '<input type="text" class="form-control" placeholder="Namn">' +
 								   '<span class="input-group-btn">' +
-							        	'<button class="btn btn-default" type="button" onclick="player.showProtocol()">Lägg till spelare</button>' +
+							        	'<button class="btn btn-default add-players" type="button">Lägg till spelare</button>' +
 							      	'</span>' +
 							    '</div><!-- /input-group -->' +
 						    '<span class="name-list"></span>' +
@@ -19,12 +19,12 @@ function theStart() {
 
 
 
-	player.name = $('.form-control').val();
+/*	player.name = $('.form-control').val();
 	console.log(player.name);
-/*	player[name] = newName;*/
-
-	$('.name-list').append('<li>' + player.name + '</li>');
-	
+	player[name] = newName;
+	allPlayers.forEach(function(player) {
+		$('.name-list').append('<li>' + player.name + '</li>');
+	});
 	
 	console.log(allPlayers);
 	
@@ -32,9 +32,21 @@ function theStart() {
 
 	// 	// remove the popup
 	// 	$('.btn-primary').on('click', function() {
-	// 		$('.popup-bg').remove();
-	// });
-}
+	/// 		$('.popup-bg').remove();
+	// });*/
+)};
 
-
-
+$(function() {
+ 	plsHelp = $('.form-control').val();
+/*	player[name] = newName;
+	$('.add-players').click(function() {
+		console.log(plsHelp);
+		new Player(plsHelp);
+		allPlayers.push(Player)
+	});
+	/*allPlayers.forEach(function(player) {
+		$('.name-list').append('<li>' + player.name + '</li>');
+	});*/
+	
+	console.log(allPlayers);
+});

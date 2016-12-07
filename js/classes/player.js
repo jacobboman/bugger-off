@@ -1,15 +1,17 @@
+var protocol = {};
 // creates new player class
-function Player(props){
-	for (var i in props) {
-    this[i] = props[i];
-    console.log(this[i]);
+function Player(uniqueName){
+	protocol = {name: uniqueName, ones:"x", twos:"x", threes:"x", fours:"x", fives:"x", sixes:"x", sum:"x", bonus:"x", onePair:"x", twoPairs:"x", threeOfAKind:"x", fourOfAKind:"x", smallStraight:"x", largeStraight:"x", fullHouse:"x", chance:"x", yatzy:"x", total:"x"};
+	for (var i in protocol) {
+    this[i] = protocol[i];
+    // console.log(this[i]);
 	}
+    console.log(protocol);
 }
 // lista där alla spelare sparas
 var allPlayers = []; 
 
 //definitivt protokoll där de definitiva värdena ska pushas in (x byts ut)
-var player = new Player({name:" ", ones:"x", twos:"x", threes:"x", fours:"x", fives:"x", sixes:"x", sum:"x", bonus:"x", onePair:"x", twoPairs:"x", threeOfAKind:"x", fourOfAKind:"x", smallStraight:"x", largeStraight:"x", fullHouse:"x", chance:"x", yatzy:"x", total:"x"});
 
 // varje spelare kan visa sitt eget protokoll
 Player.prototype.showProtocol = function() {
@@ -34,6 +36,5 @@ Player.prototype.showProtocol = function() {
 	$('.total').append('<td>' + this.total + '</td>');
 
 	allPlayers.push(player);
-	/*theStart();*/
 }
 
