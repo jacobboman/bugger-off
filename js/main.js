@@ -30,3 +30,10 @@ function theStart() {
 			$('.popup-bg').remove();
 	});
 }
+
+function showScoreOptions(playerNo, scoreType) {
+	var whereTo = playerNo + 2;
+	var pair = 4;
+	var getChild = "td:nth-child(" + whereTo + ")";
+	$('.one-pair ' + getChild).html(scoreType);
+}
