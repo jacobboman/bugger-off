@@ -43,6 +43,9 @@ function roll(){
 	$("#total").empty();
 	$('#total').append(listItem);
 	
+	var allDice = [dice1,dice2,dice3,dice4,dice5];
+	//console.log('allDice', allDice);
+	placingPoints(allDice);
 
 }
 
