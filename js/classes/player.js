@@ -34,5 +34,6 @@ Player.prototype.showProtocol = function() {
 	$('.total').append('<td>' + this.total + '</td>');
 
 	allPlayers.push(player);
+	/*theStart();*/
 }
 
