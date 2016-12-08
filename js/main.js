@@ -54,3 +54,4 @@ function showScoreOptions(playerNo) {
 	$('.one-pair ' + getChild).html(pair);
 }
 
+
