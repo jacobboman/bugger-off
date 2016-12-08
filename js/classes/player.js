@@ -39,17 +39,17 @@ var allPlayers = [];
 var currentPlayer;
 var currentPlayerIndex = 0;
 
-function createPlayers(playerNames){
+// function createPlayers(playerNames){
 
-    allPlayers = [new Player('Axl'), new Player('Mia'),  new Player('Ann')];
+//     allPlayers = [new Player('Axl'), new Player('Mia'),  new Player('Ann')];
     
-    allPlayers[0].showProtocol();
-    allPlayers[1].showProtocol();
-    allPlayers[2].showProtocol();
+//     allPlayers[0].showProtocol();
+//     allPlayers[1].showProtocol();
+//     allPlayers[2].showProtocol();
     
-    currentPlayer = allPlayers[currentPlayerIndex];
-    console.log('allPlayers', allPlayers);
-}
+//     currentPlayer = allPlayers[currentPlayerIndex];
+//     console.log('allPlayers', allPlayers);
+// }
 
 
 function nextPlayer(){
