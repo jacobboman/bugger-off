@@ -47,14 +47,15 @@ h4 {
 /*below is everything styling and positioning the popup and its elements */
 .dom-popup {
 	position: absolute;
-	z-index: 4;
-	border: 2px solid black;
-	width: 750px;
-	height: 400px; 
-	left: 40%;
-	top: 50%;
-	margin-top: -150px;
-	margin-left: -150px;
+    z-index: 4;
+    border: 2px solid black;
+    width: 750px;
+    height: 400px;
+    bottom: 20%;
+    left: 0;
+    right: 0;
+    top: auto;
+    margin: 0 auto;
 	padding: 5px;
 	background-color: rgba(255,255,255,0.65);
 	border-radius: 16px;
@@ -76,7 +77,43 @@ h4 {
 	left: 0;
 }
 
+
+
 div.col-lg-6.player-input, div.col-lg-6.player-list {
-	margin-top: 30px;
+	padding: 2em;
 }
+
+.player-label {
+	font-size: 2em;
+}
+
+#usrnm {
+	font-size: 1.5em;
+	font-family: AppleGothic;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 26.4px;
+	padding: 8px;
+	-webkit-box-shadow: 3px 10px 44px 3px rgba(0,0,0,0.46);
+	-moz-box-shadow: 3px 10px 44px 3px rgba(0,0,0,0.46);
+	box-shadow: 3px 10px 44px 3px rgba(0,0,0,0.46);
+}
+
+.btn-add-players, .btn-start-game {
+	margin-top: 1em;
+	margin-right: 1em;
+	background-color: #2B9FB1;
+	font-size: 1.5em;
+	font-family: AppleGothic;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 26.4px;
+	padding: 8px;
+	-webkit-box-shadow: 3px 10px 44px 3px rgba(0,0,0,0.46);
+	-moz-box-shadow: 3px 10px 44px 3px rgba(0,0,0,0.46);
+	box-shadow: 3px 10px 44px 3px rgba(0,0,0,0.46);
+}
+
 
