@@ -44,7 +44,7 @@ h4 {
 	text-align: center;
 }
 
-/* below is everything styling and positioning the popup and its elements */
+/*below is everything styling and positioning the popup and its elements */
 .dom-popup {
 	position: absolute;
 	z-index: 4;
@@ -63,11 +63,6 @@ h4 {
 	box-shadow: 3px 10px 44px 3px rgba(0,0,0,0.46);
 }
 
-h2 {
-	text-align: center;
-	padding-top: 30px;
-}
-
 .popup-bg {
 	background-image: url('../img/bg.jpg');
 	background-repeat: no-repeat;
@@ -81,22 +76,7 @@ h2 {
 	left: 0;
 }
 
-.close-here {
-	position: absolute;
-	top: 1.5px;
-	right: 1.5px;
-	font-size: 15px;
-	padding: 8px;
-	border: 1px solid black;
-	border-top: 0;
-	border-right: 0;
-	border-radius: 10px;
-	cursor: pointer;
-	-webkit-box-shadow: inset 3px -2px 5px 1px rgba(0,0,0,0.75);
-	-moz-box-shadow: inset 3px -2px 5px 1px rgba(0,0,0,0.75);
-	box-shadow: inset 3px -2px 5px 1px rgba(0,0,0,0.75);
-}
-
-.players-buttons {
+div.col-lg-6.player-input, div.col-lg-6.player-list {
 	margin-top: 30px;
 }
+
