@@ -31,9 +31,9 @@ function theStart() {
 	});
 }
 
-function showScoreOptions(playerNo, scoreType) {
+function showScoreOptions(playerNo) {
 	var whereTo = playerNo + 2;
 	var pair = 4;
 	var getChild = "td:nth-child(" + whereTo + ")";
-	$('.one-pair ' + getChild).html(scoreType);
+	$('.one-pair ' + getChild).html(pair);
 }
