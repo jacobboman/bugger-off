@@ -8,10 +8,12 @@ function theStart() {
 					  	'<label for="usrnm" class="ui-hidden-accessible player-label">Spelare:</label>' +
 					  	'<input type="text" name="user" id="usrnm" placeholder="Namn">' +
 						'<input type="submit" data-inline="true" class="add-players" value="Lägg till spelare">' +
+						'<input type="submit" data-inline="true" class="start-game" value="Spela!!">' +
 				   '</div><!-- /.col-lg-6 -->' +
 				   '<div class="col-lg-6 player-list">' +
 				  		'<ol class="name-list"></ol>' +
 				  	'</div>' +
+				  	
 				'</div><!-- /.row -->' +
 			'</div>' +
 		'</div>');
@@ -41,8 +43,11 @@ function theStart() {
 			
 			console.log(allPlayers);
 
-		// remove the popup
-		$('.btn-primary').on('click', function() {
+		// render protocol and remove the popup
+		$('.start-game').on('click', function() {
+			allPlayers.forEach(function(player) {
+				player.showProtocol();
+			});
 			$('.popup-bg').remove();
 	});
 }
