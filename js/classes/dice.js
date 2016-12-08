@@ -51,6 +51,12 @@ function roll(){
 
 var count = 0;
 
+$(document).ready(function(){
+	$(".die-button").click(function(){
+	    $(this).toggleClass("locked");
+	});
+});
+
 function clicks(){
 
 	if (count < 3){
