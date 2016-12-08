@@ -68,7 +68,7 @@ function nextPlayer(){
 
 
 
-function placingPoints(dice){
+function dicePoints(dice){
     console.log('dice', dice);
     var points={};
     for(var i=0; i< dice.length; i++){
@@ -84,8 +84,8 @@ function placingPoints(dice){
 }
 
 var possibilities={
-    ones: function(placing){
-        var simillar= placing;
+    ones: function(dice){
+        var simillar= dicePoints(dice);
         if(simillar[3]){
             return simillar[3] * 3;
         }
@@ -96,43 +96,71 @@ var possibilities={
                             //    if(d===1){
                             //        a=a+1;
     },
-    twos: function(placing){
-        var simillar= placing;
+    twos: function(dice){
+        var simillar= dicePoints(dice);
+        if(simillar[2]){
+            return simillar[2] * 2;
+        }
+        return 0;
+    },
+    threes: function(dice){
+        var simillar= dicePoints(dice);
+        if(simillar[3]){
+            return simillar[3] * 3;
+        }
+        return 0;
+    },
+    fours: function(dice){
+        var simillar= dicePoints(dice);
+        if(simillar[4]){
+            return simillar[4] * 4;
+        }
+        return 0;
+    },
+    fives: function(dice){
+        var simillar= dicePoints(dice);
         if(simillar[5]){
             return simillar[5] * 5;
         }
         return 0;
     },
-    // threes: function(placing){
-    //  var simillar= placing;
+   	sixes: function(dice){
+        var simillar= dicePoints(dice);
+        if(simillar[6]){
+            return simillar[6] * 6;
+        }
+        return 0;
+    },
+    // threes: function(dice){
+    //  var simillar= dice;
     //  if(simillar[3]){
     //      return simillar[3] * 3;
     //  }
     //  return 0;
     // },
     // fours: function(){
-    //  var simillar= placing;
+    //  var simillar= dice;
     //  if(simillar[3]){
     //      return simillar[3] * 3;
     //  }
     //  return 0;
     // },
     // fives: function(){
-    //  var simillar= placing;
+    //  var simillar= dice;
     //  if(simillar[3]){
     //      return simillar[3] * 3;
     //  }
     //  return 0;
     // },
     // sixes: function(){
-    //  var simillar= placing;
+    //  var simillar= dice;
     //  if(simillar[3]){
     //      return simillar[3] * 3;
     //  }
     //  return 0;
     // },
-    onePair: function(placing){
-        var simillar= placing;
+    onePair: function(dice){
+        var simillar= dice;
         for(var i in simillar){
             if(simillar[i] > 1){
                 return i * simillar[i];
@@ -142,7 +170,7 @@ var possibilities={
     }
     //, 
     // twoPairs: function(){
-    //  var simillar= placing;
+    //  var simillar= dice;
     //  for(var i in simillar){
     //      if(simillar[i] > 2){
     //          return i * simillar[i];
@@ -151,7 +179,7 @@ var possibilities={
     //  return 0;
     // },
     // threeOfAKind: function(){
-    //  var simillar= placing;
+    //  var simillar= dice;
     //  for(var i in simillar){
     //      if(simillar[i] > 3){
     //          return i * simillar[i];
@@ -160,7 +188,7 @@ var possibilities={
     //  return 0;
     // },   
     // fourOfAKind: function(){
-    //  var simillar= placing;
+    //  var simillar= dice;
     //  for(var i in simillar){
     //      if(simillar[i] > 4){
     //          return i * simillar[i];
