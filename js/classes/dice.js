@@ -77,3 +77,21 @@ function clicks(){
 	}
 
 }
+
+var allDice = [die1, die2, die3, die4, die5];
+function Dice() {
+	// allDice = [die1, die2, die3, die4, die5];
+	for (var i = 0; i < allDice.length; i++) {
+		if ($('.die-' + i + 1 ).hasClass('locked')) {
+
+		} else {
+			allDice[i] = Dice.roll;
+			$('.die-' + i + 1).html(allDice[i]);
+		}
+	}
+}
+
+Dice.prototype.roll = function() {
+	var dice = Math.floor(Math.random()*6)+1;
+};
+

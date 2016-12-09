@@ -6,7 +6,6 @@ function Player(uniqueName){
     this[i] = protocol[i];
     // console.log(this[i]);
 	}
-    console.log(protocol);
 }
 
 // varje spelare kan visa sitt eget protokoll
@@ -200,3 +199,31 @@ var possibilities={
 
 };
 
+var scoreType;
+// Basically a sketch for what I think needs to be done,to get
+// scoreType dynamically
+Player.prototype.scoreTypeForDom = function() {
+	// an array with all the values from the current throw
+	scoreTypeArray = [ones, twos, threes, fours, fives, sixes, sum, bonus, onePair, twoPairs, threeOfAKind, fourOfAKind, smallStraight, largeStraight, fullHouse, chance, yatzy];
+	// loop to give scoreType the 'current' score type.
+	for (var i = 0; i < scoreTypeArray.length; i++) {
+		scoreType = scoreTypeArray[i];
+		return scoreType;
+	}
+};
+
+Player.prototype.showScoreOptions = function() {
+	// childNo exists because writing currentPlayerIndex +2
+	// in nth-child... doesn't work
+	var childNo = currentPlayerIndex + 2;
+	// might not be needed, as getChild doesn't really do anything
+	// looks clean this way though
+	var getChild = ' td:nth-child(' + childNo + ')';
+	// in table body, find table row. for each table row,
+	$('tbody').find('tr').each(function() {
+		// find 'this' class and store it in thisClass
+		thisClass = $(this).attr('class');
+		// change what's in the nth td in 'this' row
+		$('.' + thisClass + getChild).html('hej');
+	});
+};
