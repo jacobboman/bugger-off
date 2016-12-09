@@ -6,9 +6,9 @@ function theStart() {
 				'<div class="row">' +
 				  '<div class="col-lg-6 player-input">' +
 					  	'<label for="usrnm" class="ui-hidden-accessible player-label">Spelare:</label>' +
-					  	'<input type="text" name="user" id="usrnm" placeholder="Namn">' +
-						'<input type="submit" data-inline="true" class="add-players" value="Lägg till spelare">' +
-						'<input type="submit" data-inline="true" class="start-game" value="Spela!!">' +
+					  	'<input type="text" name="user" id="usrnm" placeholder="Namn" autofocus>' +
+						'<input type="submit" data-inline="true" class="btn-add-players" value="Lägg till spelare">' +
+						'<input type="submit" data-inline="true" class="btn-start-game" value="Spela!!">' +
 				   '</div><!-- /.col-lg-6 -->' +
 				   '<div class="col-lg-6 player-list">' +
 				  		'<ol class="name-list"></ol>' +
@@ -19,7 +19,7 @@ function theStart() {
 		'</div>');
 
 
-		$('.add-players').on('click', function(event) {
+		$('.btn-add-players').on('click', function(event) {
 			event.preventDefault();
 			// FÖR VARJE KLICK:
 			// input-värde sparas i variabeln playerName
@@ -33,18 +33,17 @@ function theStart() {
 			// spelarnas namn appendas som list items i DOM
 			$('.name-list').append('<li>' + playerName + '</li>');
 			// input-fältet töms
-			// $('#usrnm').val('');
+			$('#usrnm').val('');
 			
 			console.log(newPlayer);
 			// den nya spelaren pushas in i den globala arrayen allPlayers
 			allPlayers.push(newPlayer);
 		});
 			
-			
 			console.log(allPlayers);
 
 		// render protocol and remove the popup
-		$('.start-game').on('click', function() {
+		$('.btn-start-game').on('click', function() {
 			allPlayers.forEach(function(player) {
 				player.showProtocol();
 			});
