@@ -1,11 +1,11 @@
 var protocol = {};
 // creates new player class
 function Player(uniqueName){
-	protocol = {name: uniqueName, ones:"x", twos:"x", threes:"x", fours:"x", fives:"x", sixes:"x", sum:"x", bonus:"x", onePair:"x", twoPairs:"x", threeOfAKind:"x", fourOfAKind:"x", smallStraight:"x", largeStraight:"x", fullHouse:"x", chance:"x", yatzy:"x", total:"x"};
-	for (var i in protocol) {
+    protocol = {name: uniqueName, ones:"x", twos:"x", threes:"x", fours:"x", fives:"x", sixes:"x", sum:"x", bonus:"x", onePair:"x", twoPairs:"x", threeOfAKind:"x", fourOfAKind:"x", smallStraight:"x", largeStraight:"x", fullHouse:"x", chance:"x", yatzy:"x", total:"x"};
+    for (var i in protocol) {
     this[i] = protocol[i];
     // console.log(this[i]);
-	}
+    }
     console.log(protocol);
 }
 
@@ -39,19 +39,6 @@ var allPlayers = [];
 var currentPlayer;
 var currentPlayerIndex = 0;
 
-// function createPlayers(playerNames){
-
-//     allPlayers = [new Player('Axl'), new Player('Mia'),  new Player('Ann')];
-    
-//     allPlayers[0].showProtocol();
-//     allPlayers[1].showProtocol();
-//     allPlayers[2].showProtocol();
-    
-//     currentPlayer = allPlayers[currentPlayerIndex];
-//     console.log('allPlayers', allPlayers);
-// }
-
-
 function nextPlayer(){
     if(allPlayers[currentPlayerIndex+1]){
         currentPlayerIndex++;
@@ -61,15 +48,11 @@ function nextPlayer(){
     }
     
     currentPlayer = allPlayers[currentPlayerIndex];
-    console.log('currentPlayer',currentPlayer); 
+    //console.log('currentPlayer',currentPlayer);
 }
 
-
-
-
-
 function dicePoints(dice){
-    console.log('dice', dice);
+    //console.log('dice', dice);
     var points={};
     for(var i=0; i< dice.length; i++){
         var eachDice= dice[i];
@@ -78,125 +61,105 @@ function dicePoints(dice){
         }
         points[eachDice]++;
     }
-    console.log("points",points);
-    var res = possibilities.onePair(points);
-    console.log('result', res);
+    console.log('result=', dice.sort(), points);
 }
 
-var possibilities={
-    ones: function(dice){
-        var simillar= dicePoints(dice);
-        if(simillar[3]){
-            return simillar[3] * 3;
-        }
-        return 0;
-         //ones: function(c,b){
-                            //var a=0;
-                            //c.forEach(function(d){
-                            //    if(d===1){
-                            //        a=a+1;
-    },
-    twos: function(dice){
-        var simillar= dicePoints(dice);
-        if(simillar[2]){
-            return simillar[2] * 2;
-        }
-        return 0;
-    },
-    threes: function(dice){
-        var simillar= dicePoints(dice);
-        if(simillar[3]){
-            return simillar[3] * 3;
-        }
-        return 0;
-    },
-    fours: function(dice){
-        var simillar= dicePoints(dice);
-        if(simillar[4]){
-            return simillar[4] * 4;
-        }
-        return 0;
-    },
-    fives: function(dice){
-        var simillar= dicePoints(dice);
-        if(simillar[5]){
-            return simillar[5] * 5;
-        }
-        return 0;
-    },
-   	sixes: function(dice){
-        var simillar= dicePoints(dice);
-        if(simillar[6]){
-            return simillar[6] * 6;
-        }
-        return 0;
-    },
-    // threes: function(dice){
-    //  var simillar= dice;
-    //  if(simillar[3]){
-    //      return simillar[3] * 3;
-    //  }
-    //  return 0;
-    // },
-    // fours: function(){
-    //  var simillar= dice;
-    //  if(simillar[3]){
-    //      return simillar[3] * 3;
-    //  }
-    //  return 0;
-    // },
-    // fives: function(){
-    //  var simillar= dice;
-    //  if(simillar[3]){
-    //      return simillar[3] * 3;
-    //  }
-    //  return 0;
-    // },
-    // sixes: function(){
-    //  var simillar= dice;
-    //  if(simillar[3]){
-    //      return simillar[3] * 3;
-    //  }
-    //  return 0;
-    // },
-    onePair: function(dice){
-        var simillar= dice;
-        for(var i in simillar){
-            if(simillar[i] > 1){
-                return i * simillar[i];
-            }
-        }
-        return 0;
+/* hashifyDice - Library function to aid in calculating "hands":
+Creates a structure with dice (values) and counts (how many of each value)
+example:  
+from [1,3,3,4,3] to {1:1,3:3,4:1}
+*/
+function hashifyDice(dice){
+  var hash = {};
+  for(var i=0; i<dice.length; i++){
+    var eachDice = dice[i];
+    if(!hash[eachDice]){
+      hash[eachDice] = 0;
     }
-    //, 
-    // twoPairs: function(){
-    //  var simillar= dice;
-    //  for(var i in simillar){
-    //      if(simillar[i] > 2){
-    //          return i * simillar[i];
-    //      }
-    //  }
-    //  return 0;
-    // },
-    // threeOfAKind: function(){
-    //  var simillar= dice;
-    //  for(var i in simillar){
-    //      if(simillar[i] > 3){
-    //          return i * simillar[i];
-    //      }
-    //  }
-    //  return 0;
-    // },   
-    // fourOfAKind: function(){
-    //  var simillar= dice;
-    //  for(var i in simillar){
-    //      if(simillar[i] > 4){
-    //          return i * simillar[i];
-    //      }
-    //  }
-    //  return 0;
-    // }    
+    hash[eachDice]++;
+  }
+  return hash;
+}
 
+function straight(dice){
+  dice.sort();
+  var sum = dice[0];
+  for(var i=1; i < dice.length; i++){
+    if(dice[i] - dice[i-1] != 1){
+      return 0;
+    }
+    sum += dice[i];
+  }
+  return sum;
+}
 
+/* all possible "hands" - an object with functions for testing every hand, and return the value of it from the current dice values
+*/
+var hands = {
+  ones: function(dice){
+    var same = hashifyDice(dice);
+    if(same[1]){ // if there are any twoos
+      return same[1] * 1; // return their calculated value
+    }
+    return 0;
+  },
+  twoos: function(dice){
+    var same = hashifyDice(dice);
+    if(same[2]){ // if there are any twoos
+      return same[2] * 2; // return their calculated value
+    }
+    return 0;
+  },
+  threes: function(dice){
+    var same = hashifyDice(dice);
+    if(same[3]){ // if there are any threes
+      return same[3] * 3; // return their calculated value
+    }
+    return 0;
+  },
+  fours: function(dice){
+    var same = hashifyDice(dice);
+    if(same[4]){ // if there are any twoos
+      return same[4] * 4; // return their calculated value
+    }
+    return 0;
+  },
+  fives: function(dice){
+    var same = hashifyDice(dice);
+    if(same[5]){ // if there are any twoos
+      return same[5] * 5; // return their calculated value
+    }
+    return 0;
+  },
+  sixes: function(dice){
+    var same = hashifyDice(dice);
+    if(same[6]){ // if there are any sixes
+      return same[6] * 6; // return their calculated value
+    }
+    return 0;
+  },
+  pair: function(dice){
+    var hash = hashifyDice(dice);
+    for(var i in hash){
+      if(hash[i] > 1){ // if there are more than one of any value we have (at least) a pair
+        return i * hash[i]; // return its value
+      }
+    }
+    // no match?
+    return 0;
+  },
+  threeOfAKind: function(dice){
+    var hash = hashifyDice(dice);
+    for(var i in hash){
+      if(hash[i] > 2){ // if there are more than one of any value we have (at least) three of a kind
+        return i * hash[i]; // return its value
+      }
+    }
+    // no match?
+    return 0;
+  },
+  lowStraight: function(dice){
+    return straight(dice) == 15 ? 15 : 0;
+  }
 };
 

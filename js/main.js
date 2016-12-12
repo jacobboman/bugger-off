@@ -51,9 +51,6 @@ function theStart() {
 	});
 }
 
-
- 
-
 // renders score in DOM. Gets playerNo from each player as this function runs
 // this function should probably be a prototype in player.js
 function showScoreOptions(playerNo) {
