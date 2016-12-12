@@ -47,23 +47,13 @@ function theStart() {
 			allPlayers.forEach(function(player) {
 				player.showProtocol();
 			});
+			clickOnScoreTypes();
 			$('.popup-bg').remove();
 	});
 }
 
-// renders score in DOM. Gets playerNo from each player as this function runs
-// this function should probably be a prototype in player.js
-function showScoreOptions(playerNo) {
-	// whereTo exists as of now, because playerNo + 2 in getChild doesn's seem to work
-	var whereTo = playerNo + 2;
-	// temporary value so for testing. this will be fetched by the function dynamically
-	var pair = 4;
-	var getChild = "td:nth-child(" + whereTo + ")";
-	// this should be re-written to something like:
-	// $('.' + domScoreType + getChild).html(scoreType); 
-	// where domScoreType is fetched during a loop where every class in the DOM-protocol is fetched
-	// and scoreType is fetched from functions within player.js
-	$('.one-pair ' + getChild).html(pair);
+function clickOnScoreTypes() {
+	$('.clickable').on('click', function() {
+		console.log($(this).html());
+	});
 }
-
-

@@ -19,7 +19,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6 col-sm-12 board">
-          <h4>Spelare 1</h4>
+          <h4 class="current-player"></h4>
           <!-- Skapar tärningar -->
           <div class="col-md-7 col-md-offset-3 col-sm-7 col-sm-offset-3 dice">
             <button type="button" class="btn die-button die-1">
@@ -52,63 +52,67 @@
         <!-- Skapar html-grund för yatzy-protokoll -->
         <div class="col-md-6 col-sm-12">
             <table class="table table-bordered">
+              <thead>
               <tr class="headlines">
                 <th class="players">Spelare</th>
               </tr>
-              <tr class="ones">
-                <td>Ettor</td>
-              </tr>
-              <tr class="twos">
-                <td>Tvåor</td>
-              </tr>
-              <tr class="threes">
-                <td>Treor</td>
-              </tr>
-              <tr class="fours">
-                <td>Fyror</td> 
-              </tr>
-              <tr class="fives">
-                <td>Femmor</td> 
-              </tr>
-              <tr class="sixes">
-                <td>Sexor</td> 
-              </tr>
-              <tr class="sum">
-                <td>Summa</td> 
-              </tr>
-              <tr class="bonus">
-                <td>Bonus</td> 
-              </tr>
-              <tr class="one-pair">
-                <td>Ett par</td> 
-              </tr>
-              <tr class="two-pairs">
-                <td>Två par</td> 
-              </tr>
-              <tr class="three-of-a-kind">
-                <td>Tretal</td> 
-              </tr>
-              <tr class="four-of-a-kind">
-                <td>Fyrtal</td> 
-              </tr>
-              <tr class="small-straight">
-                <td>Liten stege</td> 
-              </tr>
-              <tr class="large-straight">
-                <td>Stor stege</td> 
-              </tr>
-              <tr class="full-house">
-                <td>Kåk</td> 
-              </tr>
-              <tr class="chance">
-                <td>Chans</td> 
-              </tr>
-              <tr class="yatzy">
-                <td>Yatzy</td> 
-              </tr>
-              <tr class="total">
-                <td>Totalt</td> 
-              </tr>
+              </thead>
+              <tbody>
+                <tr class="ones">
+                  <td>Ettor</td>
+                </tr>
+                <tr class="twos">
+                  <td>Tvåor</td>
+                </tr>
+                <tr class="threes">
+                  <td>Treor</td>
+                </tr>
+                <tr class="fours">
+                  <td>Fyror</td> 
+                </tr>
+                <tr class="fives">
+                  <td>Femmor</td>
+                </tr>
+                <tr class="sixes">
+                  <td>Sexor</td> 
+                </tr>
+                <tr class="sum">
+                  <td>Summa</td> 
+                </tr>
+                <tr class="bonus">
+                  <td>Bonus</td> 
+                </tr>
+                <tr class="one-pair">
+                  <td>Ett par</td> 
+                </tr>
+                <tr class="two-pairs">
+                  <td>Två par</td> 
+                </tr>
+                <tr class="three-of-a-kind">
+                  <td>Tretal</td> 
+                </tr>
+                <tr class="four-of-a-kind">
+                  <td>Fyrtal</td> 
+                </tr>
+                <tr class="small-straight">
+                  <td>Liten stege</td> 
+                </tr>
+                <tr class="large-straight">
+                  <td>Stor stege</td> 
+                </tr>
+                <tr class="full-house">
+                  <td>Kåk</td> 
+                </tr>
+                <tr class="chance">
+                  <td>Chans</td> 
+                </tr>
+                <tr class="yatzy">
+                  <td>Yatzy</td> 
+                </tr>
+                <tr class="total">
+                  <td>Totalt</td> 
+                </tr>
+              </tbody>
             </table>
         </div>
     </body>

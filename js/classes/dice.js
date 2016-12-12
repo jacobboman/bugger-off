@@ -85,3 +85,20 @@ function clicks(){
 	}
 
 }
+
+function Dice() {
+	// allDice = [die1, die2, die3, die4, die5];
+	for (var i = 1; i < allDice.length; i++) {
+		if ($('.die-' + i).hasClass('locked')) {
+
+		} else {
+			allDice[i] = Dice.roll;
+			$('.die-' + i).html(allDice[i]);
+		}
+	}
+}
+
+Dice.prototype.roll = function() {
+	var dice = Math.floor(Math.random()*6)+1;
+};
+
