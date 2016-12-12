@@ -140,20 +140,45 @@ var hands = {
     return 0;
   },
   pair: function(dice){
+    dice.sort();
+    var hash = hashifyDice(dice);
+    for(var i = 0; i<dice.length; i++){
+        if(dice[2] === dice[3] || dice[3] === dice[4]){
+            return dice[3] * 2;
+            break;
+        } else if(dice[0] === dice[1] || dice[1] === dice[2]){
+            return dice[1] * 2;
+        }
+    }
+    // no match?
+    return 0;
+  },
+  // pair: function(dice){
+  //   dice.sort();
+  //   var hash = hashifyDice(dice);
+  //   for(var i in hash){
+  //     if(dice[0] === dice[4] || dice[1] === dice[4] || dice[2] === dice[4] || dice[3] === dice[4]){ // if there are more than one of any value we have (at least) a pair
+  //       return dice[i] * 2; // return its value
+  //     }
+  //   }
+  //   // no match?
+  //   return 0;
+  // },
+  threeOfAKind: function(dice){
     var hash = hashifyDice(dice);
     for(var i in hash){
-      if(hash[i] > 1){ // if there are more than one of any value we have (at least) a pair
-        return i * hash[i]; // return its value
+      if(hash[i] >= 3){ // if there are more than one of any value we have (at least) three of a kind
+        return i * 3; // return its value
       }
     }
     // no match?
     return 0;
   },
-  threeOfAKind: function(dice){
+   fourOfAKind: function(dice){
     var hash = hashifyDice(dice);
     for(var i in hash){
-      if(hash[i] > 2){ // if there are more than one of any value we have (at least) three of a kind
-        return i * hash[i]; // return its value
+      if(hash[i] >= 4){ // if there are more than one of any value we have (at least) three of a kind
+        return i * 4; // return its value
       }
     }
     // no match?
