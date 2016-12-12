@@ -226,6 +226,6 @@ Player.prototype.showScoreOptions = function() {
 		// find 'this' class and store it in thisClass
 		thisClass = $(this).attr('class');
 		// change what's in the nth td in 'this' row
-		$('.' + thisClass + getChild).html('hej');
+		$('.' + thisClass + getChild).html('scoreType');
 	});
 };

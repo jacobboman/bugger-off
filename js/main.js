@@ -57,3 +57,9 @@ function clickOnScoreTypes() {
 		console.log($(this).html());
 	});
 }
+
+function removeClickable() {
+	// $('tbody').find('tr').each(function() {
+		$('td').removeClass('.clickable');
+	// });
+}
