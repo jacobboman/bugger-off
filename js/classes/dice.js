@@ -44,8 +44,16 @@ function roll(){
 	$('#total').append(listItem);
 	
 	var allDice = [dice1,dice2,dice3,dice4,dice5];
+	// an example of our dice
+
+
+	for(var h in hands){
+  var hand = hands[h];
+  // see it in the console..
+  console.log(h, hand(allDice));
+	}
 	//console.log('allDice', allDice);
-	placingPoints(allDice);
+	dicePoints(allDice);
 
 }
 
@@ -53,15 +61,15 @@ var count = 0;
 
 $(document).ready(function(){
 	$(".die-button").click(function(){
-	    $(this).toggleClass("locked");
+    $(this).toggleClass("locked");
 	});
 });
 
 function clicks(){
 
-	if (count < 3){
+	if (count < 11){ // fixa detta här ska vara 3 inte 11 !!!!!!
 		count++;
-		console.log(count);
+		//console.log(count);
 		$('.counter').html(3-count);
 		roll();
 	}
