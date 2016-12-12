@@ -93,7 +93,7 @@ div.col-lg-6.player-input, div.col-lg-6.player-list {
 
 #usrnm {
 	font-size: 1.5em;
-	font-family: AppleGothic;
+	font-family: "Geneva", sans-serif;
 	font-style: normal;
 	font-variant: normal;
 	font-weight: 500;
@@ -109,7 +109,7 @@ div.col-lg-6.player-input, div.col-lg-6.player-list {
 	margin-right: 1em;
 	background-color: #2B9FB1;
 	font-size: 1.5em;
-	font-family: AppleGothic;
+	font-family: "Geneva", sans-serif;
 	font-style: normal;
 	font-variant: normal;
 	font-weight: 500;
@@ -120,4 +120,7 @@ div.col-lg-6.player-input, div.col-lg-6.player-list {
 	box-shadow: 3px 10px 44px 3px rgba(0,0,0,0.46);
 }
 
-
+.name-list {
+	font-size: 1.5em;
+	font-family: "Geneva", sans-serif;
+}
