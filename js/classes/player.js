@@ -10,25 +10,27 @@ function Player(uniqueName){
 
 // varje spelare kan visa sitt eget protokoll
 Player.prototype.showProtocol = function(dice) {
+
+
     $('.headlines').append('<th class="players">' + this.name + '</th>');
-    $('.ones').append('<td>' + this.ones + '</td>');
-    $('.twos').append('<td>' + this.twos + '</td>');
-    $('.threes').append('<td>' + this.threes + '</td>');
-    $('.fours').append('<td>' + this.fours + '</td>');
-    $('.fives').append('<td>' + this.fives+ '</td>');
-    $('.sixes').append('<td>' + this.sixes + '</td>');
-    $('.sum').append('<td>' + this.sum + '</td>');
-    $('.bonus').append('<td>' + this.bonus + '</td>');
-    $('.one-pair').append('<td>' + this.onePair + '</td>');
-    $('.two-pairs').append('<td>' + this.twoPairs + '</td>');
-    $('.three-of-a-kind').append('<td>' + this.threeOfAKind + '</td>');
-    $('.four-of-a-kind').append('<td>' + this.fourOfAKind + '</td>');
-    $('.small-straight').append('<td>' + this.smallStraight + '</td>');
-    $('.large-straight').append('<td>' + this.largeStraight + '</td>');
-    $('.full-house').append('<td>' + this.fullHouse + '</td>');
-    $('.chance').append('<td>' + this.chance + '</td>');
-    $('.yatzy').append('<td>' + this.yatzy + '</td>');
-    $('.total').append('<td>' + this.total + '</td>');
+    $('.ones').append('<td class="clickable">' + this.ones + '</td>');
+    $('.twos').append('<td class="clickable">' + this.twos + '</td>');
+    $('.threes').append('<td class="clickable">' + this.threes + '</td>');
+    $('.fours').append('<td class="clickable">' + this.fours + '</td>');
+    $('.fives').append('<td class="clickable">' + this.fives+ '</td>');
+    $('.sixes').append('<td class="clickable">' + this.sixes + '</td>');
+    $('.sum').append('<td class="clickable">' + this.sum + '</td>');
+    $('.bonus').append('<td class="clickable">' + this.bonus + '</td>');
+    $('.one-pair').append('<td class="clickable">' + this.onePair + '</td>');
+    $('.two-pairs').append('<td class="clickable">' + this.twoPairs + '</td>');
+    $('.three-of-a-kind').append('<td class="clickable">' + this.threeOfAKind + '</td>');
+    $('.four-of-a-kind').append('<td class="clickable">' + this.fourOfAKind + '</td>');
+    $('.small-straight').append('<td class="clickable">' + this.smallStraight + '</td>');
+    $('.large-straight').append('<td class="clickable">' + this.largeStraight + '</td>');
+    $('.full-house').append('<td class="clickable">' + this.fullHouse + '</td>');
+    $('.chance').append('<td class="clickable">' + this.chance + '</td>');
+    $('.yatzy').append('<td class="clickable">' + this.yatzy + '</td>');
+    $('.total').append('<td class="clickable">' + this.total + '</td>');
 
     //allPlayers.push(player);
 };

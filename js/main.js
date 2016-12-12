@@ -47,6 +47,13 @@ function theStart() {
 			allPlayers.forEach(function(player) {
 				player.showProtocol();
 			});
+			clickOnScoreTypes();
 			$('.popup-bg').remove();
+	});
+}
+
+function clickOnScoreTypes() {
+	$('.clickable').on('click', function() {
+		console.log($(this).html());
 	});
 }

@@ -78,15 +78,14 @@ function clicks(){
 
 }
 
-var allDice = [die1, die2, die3, die4, die5];
 function Dice() {
 	// allDice = [die1, die2, die3, die4, die5];
-	for (var i = 0; i < allDice.length; i++) {
-		if ($('.die-' + i + 1 ).hasClass('locked')) {
+	for (var i = 1; i < allDice.length; i++) {
+		if ($('.die-' + i).hasClass('locked')) {
 
 		} else {
 			allDice[i] = Dice.roll;
-			$('.die-' + i + 1).html(allDice[i]);
+			$('.die-' + i).html(allDice[i]);
 		}
 	}
 }
