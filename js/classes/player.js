@@ -1,4 +1,5 @@
 var protocol = {};
+var scoreTypeArray = [];
 // creates new player class
 function Player(uniqueName){
     protocol = {name: uniqueName, ones:"x", twos:"x", threes:"x", fours:"x", fives:"x", sixes:"x", sum:"x", bonus:"x", onePair:"x", twoPairs:"x", threeOfAKind:"x", fourOfAKind:"x", smallStraight:"x", largeStraight:"x", fullHouse:"x", chance:"x", yatzy:"x", total:"x"};
@@ -7,7 +8,6 @@ function Player(uniqueName){
     // console.log(this[i]);
 	}
 }
-
 // varje spelare kan visa sitt eget protokoll
 Player.prototype.showProtocol = function(dice) {
 
@@ -96,11 +96,13 @@ function straight(dice){
 
 /* all possible "hands" - an object with functions for testing every hand, and return the value of it from the current dice values
 */
+var ones = 0;
 var hands = {
   ones: function(dice){
     var same = hashifyDice(dice);
     if(same[1]){ // if there are any twoos
-      return same[1] * 1; // return their calculated value
+        // renderPossibleScores('.ones', same[1]*1, 0); 
+        return same[1] * 1; // return their calculated value
     }
     return 0;
   },
@@ -164,12 +166,12 @@ var hands = {
   }
 };
 
-var scoreType;
+// var scoreType;
 // Basically a sketch for what I think needs to be done,to get
 // scoreType dynamically
 Player.prototype.scoreTypeForDom = function() {
 	// an array with all the values from the current throw
-	scoreTypeArray = [ones, twos, threes, fours, fives, sixes, sum, bonus, onePair, twoPairs, threeOfAKind, fourOfAKind, smallStraight, largeStraight, fullHouse, chance, yatzy];
+	// scoreTypeArray = [ones, twos, threes, fours, fives, sixes, sum, bonus, onePair, twoPairs, threeOfAKind, fourOfAKind, smallStraight, largeStraight, fullHouse, chance, yatzy];
 	// loop to give scoreType the 'current' score type.
 	for (var i = 0; i < scoreTypeArray.length; i++) {
 		scoreType = scoreTypeArray[i];
@@ -178,17 +180,36 @@ Player.prototype.scoreTypeForDom = function() {
 };
 
 Player.prototype.showScoreOptions = function() {
-	// childNo exists because writing currentPlayerIndex +2
-	// in nth-child... doesn't work
+	// childNo exists because writing currentPlayerIndex +2 in nth-child... doesn't work
 	var childNo = currentPlayerIndex + 2;
-	// might not be needed, as getChild doesn't really do anything
-	// looks clean this way though
-	var getChild = ' td:nth-child(' + childNo + ')';
+	// might not be needed, as getChild doesn't really do anything looks clean this way though
+	var getChild = 'clickable:nth-child(' + childNo + ')';
 	// in table body, find table row. for each table row,
 	$('tbody').find('tr').each(function() {
 		// find 'this' class and store it in thisClass
 		thisClass = $(this).attr('class');
-		// change what's in the nth td in 'this' row
-		$('.' + thisClass + getChild).html('scoreType');
+			// change what's in the nth td in 'this' row
+		scoreTypeArray.forEach(function(i) {
+			$('.' + /*thisClass +*/ getChild ).html(scoreTypeArray[i]);
+		});
 	});
 };
+
+function renderPossibleScores(whatScore, sameWhich, whichIndex) {
+    scoreTypeArray.splice(whichIndex, 1, sameWhich);
+    var childNo = currentPlayerIndex + 2;
+    // might not be needed, as getChild doesn't really do anything looks clean this way though
+    var getChild = 'td:nth-child(' + childNo + ')';
+    if ($(getChild).hasClass('clickable')) {
+        $(whatScore).children(getChild).html(scoreTypeArray[whichIndex]);
+    }
+}
+
+function testObjectKeys(k) {
+    for (var i in hands) {
+        if (hands.hasOwnProperty(i)) {
+            k = i;
+            console.log(k, hands[k]);
+        }
+    }
+}

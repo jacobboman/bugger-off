@@ -55,11 +55,6 @@ function theStart() {
 function clickOnScoreTypes() {
 	$('.clickable').on('click', function() {
 		console.log($(this).html());
+		$(this).removeClass('clickable');
 	});
-}
-
-function removeClickable() {
-	// $('tbody').find('tr').each(function() {
-		$('td').removeClass('.clickable');
-	// });
 }
