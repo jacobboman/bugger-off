@@ -142,20 +142,36 @@ var hands = {
     return 0;
   },
   pair: function(dice){
-    var hash = hashifyDice(dice);
-    for(var i in hash){
-      if(hash[i] > 1){ // if there are more than one of any value we have (at least) a pair
-        return i * hash[i]; // return its value
-      }
-    }
+    // sorterar resultat av tärningskast i dice-arrayen
+    // från 1 till 6
+    dice.sort();
+      // om resultatet på index 2 i dice-array = index 3 ELLER
+      // resultatet på index 3 = 4
+      if (dice[2] === dice[3] || dice[3] === dice[4]){
+        // ...returnera det mellersta resultatet * 2 (p g a par med högst värde har hittats)
+        return dice[3] * 2;
+      // samma sak gäller här, fast för den första hälften av arrayen (lägre värden)
+      } else if (dice[0] === dice[1] || dice[1] === dice[2]){
+          return dice[1] * 2;
+        }
     // no match?
     return 0;
   },
   threeOfAKind: function(dice){
     var hash = hashifyDice(dice);
     for(var i in hash){
-      if(hash[i] > 2){ // if there are more than one of any value we have (at least) three of a kind
-        return i * hash[i]; // return its value
+      if(hash[i] >= 3){ // if there are more than one of any value we have (at least) three of a kind
+        return i * 3; // return its value
+      }
+    }
+    // no match?
+    return 0;
+  },
+   fourOfAKind: function(dice){
+    var hash = hashifyDice(dice);
+    for(var i in hash){
+      if(hash[i] >= 4){ // if there are more than one of any value we have (at least) three of a kind
+        return i * 4; // return its value
       }
     }
     // no match?

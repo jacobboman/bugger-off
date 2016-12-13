@@ -4,13 +4,13 @@ function theStart() {
 		'<div class="popup-bg">' +
 			'<div class="dom-popup">' + 
 				'<div class="row">' +
-				  '<div class="col-lg-6 player-input">' +
+				  '<div class="col-lg-12 player-input">' +
 					  	'<label for="usrnm" class="ui-hidden-accessible player-label">Spelare:</label>' +
 					  	'<input type="text" name="user" id="usrnm" placeholder="Namn" autofocus>' +
 						'<input type="submit" data-inline="true" class="btn-add-players" value="Lägg till spelare">' +
 						'<input type="submit" data-inline="true" class="btn-start-game" value="Spela!!">' +
 				   '</div><!-- /.col-lg-6 -->' +
-				   '<div class="col-lg-6 player-list">' +
+				   '<div class="col-lg-12 player-list">' +
 				  		'<ol class="name-list"></ol>' +
 				  	'</div>' +
 				  	
