@@ -7,14 +7,15 @@
     <!-- all JS -->
     <script type="text/javascript" src="js/libs/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="js/libs/bootstrap.min.js"></script>
-    <script src="js/classes/Dice.js"></script>
-    <script src="js/classes/Player.js"></script>
+    <script src="js/classes/dice.js"></script>
+    <script src="js/classes/player.js"></script>
     <script src="js/main.js"></script>
     <!-- all CSS -->
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
   </head>
-  
+
+<!-- popup laddas direkt när sidan öppnas -->
 <body onload="theStart()">
     <div class="container">
       <div class="row">
@@ -38,20 +39,20 @@
             <div class="col-sm-6 col-sm-offset-4 throw-button">
                 <button type="button" class="btn1 btn-success btn-lg" id="btn" onclick="clicks()">KASTA TÄRNINGAR</button>
             </div>
-            <!-- Visar antal poäng och kast -->
+            <!-- Visar antal kast kvar -->
             <div class="col-sm-12">
-                <h4>Totala poäng: <span id="total"> </span></h4>
                 <h4>Kast kvar: </h4><h4 class="counter">3</h4>
             </div>
 
 
-            <br>  <!-- johan provisorisk knapp för att trigga nya spelare -->
+            <br>  
+            <!-- provisorisk knapp för att trigga nästa spelare -->
             <div><button type="button" id="btn1" onclick="nextPlayer()">NextTurn</button></div> 
 
         </div>
         <!-- Skapar html-grund för yatzy-protokoll -->
         <div class="col-md-6 col-sm-12">
-            <table class="table table-bordered">
+            <table class="table table-bordered" id="protocol">
               <thead>
               <tr class="headlines">
                 <th class="players">Spelare</th>

@@ -1,4 +1,4 @@
-
+var count = 0;
 function roll(){
 	
 	if($('.die-1').hasClass('locked')){
@@ -53,11 +53,9 @@ function roll(){
   console.log(h, hand(allDice));
 	}
 	//console.log('allDice', allDice);
-	dicePoints(allDice);
+	hashifyDice(allDice);
 
 }
-
-var count = 0;
 
 $(document).ready(function(){
 	$(".die-button").click(function(){
@@ -66,15 +64,12 @@ $(document).ready(function(){
 });
 
 function clicks(){
-
 	if (count < 11){ // fixa detta här ska vara 3 inte 11 !!!!!!
 		count++;
 		//console.log(count);
 		$('.counter').html(3-count);
 		roll();
-	}
-
-	else {alert("ny spelares tur!");
+	} else {alert("ny spelares tur!");
 		// kasträknaren och tärningarna töms
 		$("span").empty();
 		$(".btn").empty();
@@ -83,9 +78,8 @@ function clicks(){
 		$('.counter').html(3-count);
 		$(".die-button").removeClass('locked');
 	}
-
 }
-
+/*
 function Dice() {
 	// allDice = [die1, die2, die3, die4, die5];
 	for (var i = 1; i < allDice.length; i++) {
@@ -101,4 +95,4 @@ function Dice() {
 Dice.prototype.roll = function() {
 	var dice = Math.floor(Math.random()*6)+1;
 };
-
+*/

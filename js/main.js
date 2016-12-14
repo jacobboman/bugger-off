@@ -1,5 +1,5 @@
 function theStart() {
-	// create a popup with all the 'choose amount of players'-buttons
+	// create a popup with buttons and input field
 	$('body').append(
 		'<div class="popup-bg">' +
 			'<div class="dom-popup">' + 
@@ -24,8 +24,6 @@ function theStart() {
 			// FÖR VARJE KLICK:
 			// input-värde sparas i variabeln playerName
 		 	var playerName = $('#usrnm').val();
-		 	// name-key i protocol object = spelarens namn
-			protocol[name] = playerName;
 			// nytt Player-object skapas och värde för name-key 
 			// skickas in (m h a inparametern playerName) till protocol-objektet
 			// och sparas i variabeln newPlayer
@@ -52,9 +50,22 @@ function theStart() {
 	});
 }
 
+// vid klick på ett resultat i DOM-protokollet, ta bort klassen 'clickable' 
+// och sätt in värdet som klicakdes på i nuvarande spelares protocol
 function clickOnScoreTypes() {
 	$('.clickable').on('click', function() {
-		console.log($(this).html());
+		// var testing = $(this).attr('class');
+		protocol.twos = $(this).html();
 		$(this).removeClass('clickable');
+		// nextPlayer() should actually run here. disabled for testing
+		// nextPlayer();
 	});
 }
+
+$(function(){
+	$('tr').click(function(){
+
+	console.log($(this).attr('class'));
+	console.log($(this).html());
+	});
+});
